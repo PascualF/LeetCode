@@ -2,4 +2,4 @@
 select email
 from person
 group by email
-Having count(email) > 1
+Having count(*) > 1
