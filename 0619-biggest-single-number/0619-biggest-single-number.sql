@@ -1,4 +1,5 @@
 # Write your MySQL query statement below
+# Usage 
 
 select MAX(num) as num
 from (select num
