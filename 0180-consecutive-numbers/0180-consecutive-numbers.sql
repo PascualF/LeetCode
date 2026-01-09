@@ -1,5 +1,5 @@
 # Write your MySQL query statement below
-select num as ConsecutiveNums
+select distinct num as ConsecutiveNums
 from (
     select
     num,
