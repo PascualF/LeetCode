@@ -1,4 +1,24 @@
 /* Write your T-SQL query statement below */
+
+;WITH first_appear AS (
+    SELECT
+        s.product_id,
+        MIN(s.year) AS first_year
+    FROM Sales s
+    GROUP BY s.product_id
+)
+SELECT
+    s.product_id,
+    fa.first_year,
+    s.quantity,
+    s.price
+FROM first_appear fa
+JOIN sales s ON s.product_id = fa.product_id
+    AND s.year = fa.first_year
+
+
+
+/*
 ;WITH first_appear AS (
     SELECT
         s.product_id,
@@ -15,3 +35,4 @@ SELECT
     fa.price
 FROM first_appear fa
 WHERE rn = 1
+*/
